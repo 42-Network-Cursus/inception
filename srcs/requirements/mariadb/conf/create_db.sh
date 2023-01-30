@@ -1,5 +1,12 @@
 #!bin/sh
 
+if [ -z "$DB_ROOT" ]; then
+  echo "DB_ROOT is not defined"
+  exit 1
+else
+  echo "DB_ROOT is defined as: $DB_ROOT"
+fi
+
 if [ ! -d "/var/lib/mysql/mysql" ]; then
 	chown -R mysql:mysql /var/lib/mysql
 
