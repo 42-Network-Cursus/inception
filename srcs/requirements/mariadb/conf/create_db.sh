@@ -28,6 +28,7 @@ GRANT ALL PRIVILEGES ON wordpress.* TO '${DB_USER}'@'%';
 FLUSH PRIVILEGES;
 EOF
 	
+echo "--------------------------------------------------------DB_ROOT value is: ${DB_ROOT} ------------------------------------------------------------"
 	# run init.sql
 	/usr/bin/mysqld --user=mysql --bootstrap < /tmp/create_db.sql
 	rm -f /tmp/create_db.sql
